@@ -1,16 +1,17 @@
 # events/serializers.py
 
+import datetime
 from rest_framework import serializers
-from .models import Event, Ticket
-
+from .models import Event, Ticket, User
 
 class EventSerializer(serializers.ModelSerializer):
+    # booking_posted=serializers.DateField(initial=datetime.date.now())
     class Meta:
         model = Event
-        fields = '__all__'
-
-
+        exclude = ('booking_posted', )
 class TicketSerializer(serializers.ModelSerializer):
+    # booked_at=serializers.DateField(initial=datetime.date.now())
     class Meta:
         model = Ticket
-        fields = '__all__'
+        exclude = ('booked_at', )
+        

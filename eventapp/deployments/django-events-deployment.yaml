@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evenst-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: events-app
+  template:
+    metadata:
+      labels:
+        app: events-app
+    spec:
+      containers:
+      - name: events-app
+        image: achyuthasta/django-events:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DATABASE_HOST
+          value: "db"
+        - name: DATABASE_USER
+          value: "admin"
+        - name: DATABASE_PASSWORD
+          value: "admin"
+        - name: DATABASE_NAME
+          value: "postgres_db"

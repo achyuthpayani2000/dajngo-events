@@ -1,0 +1,14 @@
+Django==4.2.2   
+django-rest-auth==0.9.5   
+django-rest-knox==4.2.0   
+djangorestframework==3.14.0  
+djangorestframework-jwt==1.11.0  
+djangorestframework-simplejwt==5.2.2   
+drf-spectacular==0.26.3
+drf-spectacular-sidecar==2023.6.1
+psycopg2-binary==2.9.6
+pycparser==2.21
+PyJWT==1.7.1
+pyrsistent==0.19.3
+pytz==2023.3
+PyYAML==6.0
